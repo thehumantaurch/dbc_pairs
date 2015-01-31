@@ -15,6 +15,7 @@ class Cohort < ActiveRecord::Base
     self.shuffle.each do |pair|
       pair = self.pairs.find_or_initialize_by(first_student_id: pair[0].id, second_student_id: pair[1].id)
       pair.save!
+      Counter.create(pair: pair)
     end
   end
 
@@ -23,7 +24,7 @@ class Cohort < ActiveRecord::Base
     odd = students.last if students.size % 2 != 0
     pairs = self.pairs.to_a
     pairs.sort_by! do |pair|
-      pair.counter
+      pair.counter.count
     end
     picks_for_today = []
     until pairs.empty?
@@ -33,13 +34,9 @@ class Cohort < ActiveRecord::Base
       pairs.delete_if { |pair| pair.first_student_id==(pick.second_student_id) }
       pairs.delete_if { |pair| pair.second_student_id==(pick.first_student_id) }
       pairs.delete_if { |pair| pair.second_student_id==(pick.second_student_id) }
-      pick.increment!(:counter)
+      pick.counter.increment!(:count)
     end
-    picks_for_today.collect! do |pick|
-      "#{Student.find(pick.first_student_id).name}, #{Student.find(pick.second_student_id).name}"
-    end
-    picks_for_today.sample << ", #{odd.name}" if odd
-    p picks_for_today
+    return {groups: picks_for_today, odd: odd}
   end
 
 end
