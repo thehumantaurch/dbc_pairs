@@ -1,7 +1,6 @@
 class Cohort < ActiveRecord::Base
   has_many :students
   has_many :pairs
-  # after_save { |cohort| cohort.create_groups }
 
   def shuffle(number_of_people=2)
     students = self.students
