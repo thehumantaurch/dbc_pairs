@@ -53,6 +53,8 @@ GEM
       execjs
     coffee-script-source (1.9.0)
     columnize (0.9.0)
+    dbc-ruby (1.0.4)
+      rest-client
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     erubis (2.7.0)
@@ -80,6 +82,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.10.1)
+    netrc (0.10.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pry (0.9.12.6)
@@ -116,6 +119,9 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     sass (3.4.11)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -158,6 +164,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  dbc-ruby
   faker
   jbuilder (~> 2.0)
   jquery-rails

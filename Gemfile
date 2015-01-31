@@ -42,5 +42,7 @@ group :development, :test do
 
   gem 'faker'
   gem 'pry'
+
+  gem 'dbc-ruby'
 end
 
