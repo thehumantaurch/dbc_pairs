@@ -2,10 +2,13 @@
 
 <div class="generate">
 
-<%= form_tag("/pairs", method: :get) %>
+<%= form_tag("/pairs", method: :get, id: "generate_pair") %>
 <%= select_tag "cohort_id", options_from_collection_for_select(@cohorts, "id", "name") %><br><Br>
 <%= submit_tag "Generate Pairs", class:"button" %>
 </div>
 
 
 
+<div id="pair_list">
+
+</div>
