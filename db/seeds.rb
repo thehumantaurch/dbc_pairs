@@ -1,9 +1,17 @@
-cohorts = DBC.client.cohort.all
 
-cohorts.each do |c|
-  Cohort.create(name: c.name)
-end
 
-15.times do
-  Student.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, cohort_id: Cohort.all.sample.id)
+DBC::Cohort.all.each do |c|
+  # cohorts << c.name
+  cohort = Cohort.create(name: c.name)
+  c.students.each do |student|
+    cohort.students.create(name: student.name)
+  end
 end
+# p cohorts
+# cohorts.each do |name|
+#   Cohort.create(name: name)
+# end
+
+# cohorts.each do |c|
+#   students = c.students
+# end
