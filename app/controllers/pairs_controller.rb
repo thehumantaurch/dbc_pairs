@@ -1,5 +1,7 @@
 class PairsController < ApplicationController
   def index
-    @groups = Cohort.find(params[:cohort_id]).assign!
+    cohort = Cohort.find(params[:cohort_id])
+    cohort.create_groups
+    @groups = cohort.assign!
   end
 end
