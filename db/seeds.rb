@@ -1,4 +1,4 @@
-cohorts = DBC::Cohort.all
+cohorts = client.cohort.all
 
 cohorts.each do |c|
   Cohort.create(name: c.name)
