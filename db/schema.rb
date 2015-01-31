@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131211204) do
+ActiveRecord::Schema.define(version: 20150131225250) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20150131211204) do
     t.integer  "count",      default: 0
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.integer  "cohort_id"
+    t.text     "assignment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pairs", force: :cascade do |t|
