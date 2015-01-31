@@ -13,23 +13,90 @@
  *= require_tree .
  *= require_self
  */
+ body{
+  color: white;
+ }
+html {
+  width: 100%;
+  height: 100%;
+    color: white;
+}
+
+@font-face {
+  font-family: 'PPETRIAL';
+  src: url('/assets/font/PPETRIAL.otf');
+  src: url('/assets/font/PPETRIAL.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+  src: asset_url('/assets/font/PPETRIAL.otf');
+}
+
+.button {
+  margin: 10px;
+  border-radius: 100%;
+  width: 80px;
+  height: 79px;
+  border: none;
+  font-size:50px;
+  margin-top: -38px;
+  margin-left: 8px;
+  background: rgb(245, 245, 245);
+  box-shadow: inset 0px 1px 3px rgba(0,0,0,0.4), 0px 1px 2px rgba(255,255,255, 1.0);
+}
+.button:before {
+  content: " ";
+  display: block;
+  width: 65px;
+  height: 65px;
+  background: rgb(250, 250, 250);
+  box-shadow: inset 0px -1px 4px 1px rgba(0,0,0,0.4), inset 0px 2px 15px 3px rgba(255,255,255, 1.0), 2px 2px 1px rgba(0,0,0,0.1);
+  position: absolute;
+
+  margin-top: -25px;
+  margin-left: 1px;
+}
+.button:after {
+  display: block;
+  position: absolute;
+  color: #5a9bad;
+  text-shadow: 0px 1px 0px white;
+}
+.button:hover:after {
+  color: #5cb8d1;
+}
+.button:active:after {
+  color:#5a9bad;
+  padding-top: 1px;
+}
+.button:active:before {
+  background: rgb(248, 248, 248);
+  box-shadow: inset 0px 1px 4px 1px rgba(0,0,0,0.1), inset -2px -2px 15px 3px rgba(255,255,255, 0.8), inset 2px 2px 1px rgba(0,0,0,0.1);
+}
+
+/* class specific styling */
+.button.smile:after {
+  content: "☺";
+  font-size: 50px;
+  margin-top: -38px;
+  margin-left: 8px;
+
+}
 
 
 body{
-  background-color: #FFB8B4;
+  background: url("http://www.elmststudio.com/wp-content/uploads/2013/09/chalkboard.jpg");
   font-family: 'Poiret One', cursive;
   font-size: 16pt;
   font-style: bold;
   letter-spacing: 15%;
+  color: white;
 }
 
 .pair{
-  color: #7F5C5A;
+  color: white;
 }
 .generate{
-  width: 50%;
-  height: 50%;
-  text-align: center;
+  color: white;
 }
 
 .pairs {
@@ -37,17 +104,23 @@ body{
     margin-right: auto;
     width: 41%;
     text-align: center;
+      color: white;
 }
 
 .pair_title{
   text-align: center;
   text-decoration: underline;
+    color: white;
 }
-
+section{
+  text-align: center;
+    color: white;
+}
 a, u {
   text-decoration: none;
-  color: #99542F;
+  color: white;
 }
+/*}
 .button {
   font: bold 1em/1.5em sans-serif;
   text-decoration: none;
@@ -58,4 +131,7 @@ a, u {
   -webkit-border-radius: 10px;
   width: 25%;
   height: 50%;
+}*/
+#pair_list{
+  color: white;
 }

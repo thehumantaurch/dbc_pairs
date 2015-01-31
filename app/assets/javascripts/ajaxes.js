@@ -12,7 +12,7 @@ var generatePiar = function(event){
     type: $target.attr('method'),
     data: $target.serialize()
   }).done(function(response){
-    $target.parent().siblings('#pair_list').empty()
-    $target.parent().siblings('#pair_list').append(response)
+    $target.parent().parent().siblings('#pair_list').empty()
+    $target.parent().parent().siblings('#pair_list').append(response)
   });
 }

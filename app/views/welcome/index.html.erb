@@ -1,10 +1,10 @@
-
+<h1><center> DBC Pairs</center></h1>
 
 <div class="generate">
-
+<section>
 <%= form_tag("/pairs", method: :get, id: "generate_pair") %>
-<%= select_tag "cohort_id", options_from_collection_for_select(@cohorts, "id", "name") %><br><Br>
-<%= submit_tag "Generate Pairs", class:"button" %>
+<%= select_tag "cohort_id", options_from_collection_for_select(@cohorts, "id", "name") %><Br><br><br><br>
+<%= submit_tag "☺", class:"button" %></section>
 </div>
 
 
