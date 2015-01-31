@@ -1,0 +1,2 @@
+module CohortsControllerHelper
+end
