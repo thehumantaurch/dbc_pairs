@@ -1,8 +1,11 @@
 <h1><%= @student.name %></h1>
 <ul>
   <% @pairs.each do |p| %>
-    <% if p.counter.count > 0 %>
-      <li><%= p.second_student.name %> : <%= p.counter.updated_at %></li>
+    <% if p.counter.count > 0 && p.first_student_id != @student.id %>
+      <li><%= link_to "#{p.first_student.name}", student_path(p.first_student.id) %> : <%= p.counter.updated_at.to_date %></li>
+      <% end %>
+    <% if p.counter.count > 0 && p.second_student_id != @student.id %>
+      <li><%= link_to "#{p.second_student.name}", student_path(p.second_student.id) %> : <%= p.counter.updated_at.to_date %></li>
     <% end %>
   <%end%>
 </ul>

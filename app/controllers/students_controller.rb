@@ -6,7 +6,6 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    @pairs = Pair.where(first_student_id: @student.id).order(updated_at: :asc)
+    @pairs = Pair.where("pairs.first_student_id = '#{@student.id}' OR pairs.second_student_id = '#{@student.id}'").order(updated_at: :asc)
   end
-
 end
