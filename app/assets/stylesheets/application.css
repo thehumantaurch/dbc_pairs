@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+
+body{
+  background-color: #FFB8B4;
+  font-family: 'Poiret One', cursive;
+  font-size: 16pt;
+  font-style: bold;
+  letter-spacing: 15%;
+}
+
+.pair{
+  color: #7F5C5A;
+}
+.generate{
+  width: 50%;
+  height: 50%;
+  text-align: center;
+
+}
+
+.pairs {
+    margin-left: auto;
+    margin-right: auto;
+    width: 41%;
+    text-align: center;
+}
+
+.pair_title{
+  text-align: center;
+  text-decoration: underline;
+}
+
+a, u {
+  text-decoration: none;
+  color: #99542F;
+}

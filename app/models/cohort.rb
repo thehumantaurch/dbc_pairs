@@ -39,7 +39,7 @@ class Cohort < ActiveRecord::Base
     picks_for_today.collect! do |pick|
       "#{Student.find(pick.first_student_id).name}, #{Student.find(pick.second_student_id).name}"
     end
-    picks_for_today.sample << ", #{odd.name}"
+    picks_for_today.sample << ", #{odd.name}"  if odd
     p picks_for_today
   end
 
