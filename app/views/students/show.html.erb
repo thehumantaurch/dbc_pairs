@@ -1,6 +1,8 @@
 <h1><%= @student.name %></h1>
 <ul>
   <% @pairs.each do |p| %>
-    <li><%= p.second_student.name %> : <%= p.created_at.to_date %></li>
+    <% if p.counter > 0 %>
+      <li><%= p.second_student.name %> : <%= p.updated_at.to_date %></li>
+    <% end %>
   <%end%>
 </ul>
