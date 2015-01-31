@@ -1,5 +1,5 @@
 class PairsController < ApplicationController
-  def show
-    @groups = Cohort.find(params[:cohort_name]).assign!
+  def index
+    @groups = Cohort.find(params[:cohort_id]).assign!
   end
 end
