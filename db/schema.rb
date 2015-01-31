@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131151302) do
+ActiveRecord::Schema.define(version: 20150131211204) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string   "name"
@@ -19,13 +19,19 @@ ActiveRecord::Schema.define(version: 20150131151302) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "counters", force: :cascade do |t|
+    t.integer  "pair_id"
+    t.integer  "count",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "pairs", force: :cascade do |t|
     t.integer  "cohort_id"
     t.integer  "first_student_id"
     t.integer  "second_student_id"
-    t.integer  "counter",           default: 0
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "students", force: :cascade do |t|
