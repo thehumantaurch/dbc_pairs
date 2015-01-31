@@ -1,0 +1,4 @@
+<%= form_tag("/pairs", method: :get) %>
+<%= select_tag "cohort_id", options_from_collection_for_select(@cohorts, "id", "name") %>
+<%= submit_tag "Generate Pairs" %>
+
