@@ -30,7 +30,6 @@ body{
   width: 50%;
   height: 50%;
   text-align: center;
-
 }
 
 .pairs {
@@ -48,4 +47,15 @@ body{
 a, u {
   text-decoration: none;
   color: #99542F;
+}
+.button {
+  font: bold 1em/1.5em sans-serif;
+  text-decoration: none;
+  color: black;
+  background: #b8c6df;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  width: 25%;
+  height: 50%;
 }
