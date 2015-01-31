@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150131151302) do
     t.integer  "cohort_id"
     t.integer  "first_student_id"
     t.integer  "second_student_id"
+    t.integer  "counter"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
