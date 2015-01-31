@@ -1,6 +1,7 @@
 class Cohort < ActiveRecord::Base
   has_many :students
   has_many :pairs
+  after_save { |cohort| cohort.create_groups }
 
   def shuffle(number_of_people=2)
     students = self.students
@@ -13,7 +14,7 @@ class Cohort < ActiveRecord::Base
 
   def create_groups
     self.shuffle.each do |pair|
-      pair = self.pairs.build(first_student_id: pair[0].id, second_student_id: pair[1].id)
+      pair = self.pairs.find_or_initialize_by(first_student_id: pair[0].id, second_student_id: pair[1].id)
       pair.save!
     end
   end
