@@ -3,8 +3,10 @@
 </p>
 <div class="pairs">
   <ol>
-  <% @groups.each do |group| %>
-    <li><p class='pair'><%= group %></p></li>
+  <% @pairs.each do |p| %>
+    <li><% p.each do |student| %>
+      <p class='pair'><%= link_to "#{student.name}", (student_path(student)) %></p>
+    <% end %></li>
   <% end %>
   </ol>
 </div>
