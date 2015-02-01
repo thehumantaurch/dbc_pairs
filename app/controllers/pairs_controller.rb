@@ -3,8 +3,12 @@ class PairsController < ApplicationController
     cohort = Cohort.find(params[:cohort_id])
     cohort.create_groups
     assignment = cohort.assign!
+
     @pairs = formate_groups(assignment)
-    # @assignment = assignment
+
+    @groups = formate_groups(assignment)
+    render partial: "pairs/list"
+
   end
 
   def formate_groups(assignment)
