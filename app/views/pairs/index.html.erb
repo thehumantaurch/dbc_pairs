@@ -10,3 +10,13 @@
   <% end %>
   </ol>
 </div>
+
+<div>
+  <h1>Groups</h1>
+  <ol>
+  <% @groups_array.each do |group| %>
+    <li><% group.each do |student| %>
+      <p><%= student.name %> <br><p>
+    <% end %></li>
+  <% end %></ol>
+</div>
