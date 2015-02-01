@@ -7,7 +7,7 @@ class PairsController < ApplicationController
     @pairs = formate_groups(assignment)
 
     @groups = formate_groups(assignment)
-    render partial: "pairs/list"
+    # render partial: "pairs/list"
     @groups_array = multi_formate_groups(assignment)
   end
 
